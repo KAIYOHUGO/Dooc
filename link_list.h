@@ -59,6 +59,6 @@ extern const struct CLinkList CLinkList;
 
 #define link_list_element_free(el) CLinkList.element_free(el)
 
-#define link_list_element_value(T, el) (*(T *)(el->value))
+#define link_list_element_value(T, el) (*(T *)((el)->value))
 
 #endif // __LINK_LIST_H
