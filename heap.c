@@ -24,7 +24,7 @@ static void internal_heap_swap(Heap *heap, void *_a, void *_b) {
   }
 }
 
-static Heap raw_heap_init(usize size_of_T, CmpFn cmp) {
+static Heap raw_heap_init(usize size_of_T, HeapCmpFn cmp) {
   Heap heap = {.list = CVec.init(size_of_T), .cmp = cmp};
   return heap;
 }

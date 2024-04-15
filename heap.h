@@ -3,15 +3,15 @@
 
 #include "vec.h"
 
-typedef bool (*CmpFn)(const void *parent, const void *children);
+typedef bool (*HeapCmpFn)(const void *parent, const void *children);
 
 typedef struct {
   Vec(T) list;
-  CmpFn cmp;
+  HeapCmpFn cmp;
 } Heap;
 
 struct CHeap {
-  Heap (*init)(usize size_of_T, CmpFn cmp);
+  Heap (*init)(usize size_of_T, HeapCmpFn cmp);
 
   void (*heapify_up)(Heap *heap);
 
